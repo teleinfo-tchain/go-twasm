@@ -15,7 +15,7 @@ type contractFunction struct {
 	val     reflect.Value
 	typ     reflect.Type
 	sig     int
-	memory  *bif.WavmMemory
+	memory  *bif.WasmMemory
 	mutable *bool
 }
 

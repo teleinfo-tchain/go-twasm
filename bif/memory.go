@@ -19,20 +19,20 @@ import (
 )
 
 // Memory implements a simple memory model for the ethereum virtual machine.
-type WavmMemory struct {
+type WasmMemory struct {
 	Memory []byte
 	Pos    int
 	Size   map[uint64]int
 }
 
-func NewWavmMemory() *WavmMemory {
-	return &WavmMemory{
+func NewWasmMemory() *WasmMemory {
+	return &WasmMemory{
 		Size: make(map[uint64]int),
 	}
 }
 
 // Set sets offset + size to value
-func (m *WavmMemory) Set(offset, size uint64, value []byte) {
+func (m *WasmMemory) Set(offset, size uint64, value []byte) {
 	// length of Memory may never be less than offset + size.
 	// The Memory should be resized PRIOR to setting the memory
 	if size > uint64(len(m.Memory)) {
@@ -50,21 +50,21 @@ func (m *WavmMemory) Set(offset, size uint64, value []byte) {
 		m.Pos = m.Pos + 1
 	}
 }
-func (m *WavmMemory) SetBytes(value []byte) (offset int) {
+func (m *WasmMemory) SetBytes(value []byte) (offset int) {
 	offset = m.Len()
 	m.Set(uint64(offset), uint64(len(value)), value)
 	return
 }
 
 // Resize resizes the memory to size
-func (m *WavmMemory) Resize(size uint64) {
+func (m *WasmMemory) Resize(size uint64) {
 	if uint64(m.Len()) < size {
 		m.Memory = append(m.Memory, make([]byte, size-uint64(m.Len()))...)
 	}
 }
 
 // Get returns offset + size as a new slice
-func (m *WavmMemory) Get(offset uint64) (cpy []byte) {
+func (m *WasmMemory) Get(offset uint64) (cpy []byte) {
 	ptr := uint32(offset)
 	if int32(ptr) < 0 {
 		ptr = uint32(int32(len(m.Memory)) + int32(ptr))
@@ -89,7 +89,7 @@ func (m *WavmMemory) Get(offset uint64) (cpy []byte) {
 	return
 }
 
-func (m *WavmMemory) NormalizeOffset(offset uint32) uint32 {
+func (m *WasmMemory) NormalizeOffset(offset uint32) uint32 {
 	if int32(offset) < 0 {
 		offset = uint32(int32(m.MemSize()) + int32(offset))
 	}
@@ -97,7 +97,7 @@ func (m *WavmMemory) NormalizeOffset(offset uint32) uint32 {
 }
 
 // GetPtr returns the offset + size
-func (m *WavmMemory) GetPtr(offset uint64) []byte {
+func (m *WasmMemory) GetPtr(offset uint64) []byte {
 	ptr := uint32(offset)
 	if int32(ptr) < 0 {
 		ptr = uint32(int32(len(m.Memory)) + int32(ptr))
@@ -119,20 +119,20 @@ func (m *WavmMemory) GetPtr(offset uint64) []byte {
 }
 
 // Len returns the length of the backing slice
-func (m *WavmMemory) Len() int {
+func (m *WasmMemory) Len() int {
 	return m.Pos
 }
 
-func (m *WavmMemory) MemSize() int {
+func (m *WasmMemory) MemSize() int {
 	return len(m.Memory)
 }
 
 // Data returns the backing slice
-func (m *WavmMemory) Data() []byte {
+func (m *WasmMemory) Data() []byte {
 	return m.Memory
 }
 
-func (m *WavmMemory) Print() {
+func (m *WasmMemory) Print() {
 	fmt.Printf("### mem %d bytes ###\n", len(m.Memory))
 	if len(m.Memory) > 0 {
 		addr := 0

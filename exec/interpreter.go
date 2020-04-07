@@ -13,16 +13,16 @@ import (
 
 type Interpreter struct {
 	*VM
-	Memory           *bif.WavmMemory
+	Memory           *bif.WasmMemory
 	heapPointerIndex int64
 	Mutable          *bool
 }
 
-func NewInterpreter(module *wasm.Module, compiled []bif.Compiled, initMem func(m *bif.WavmMemory, module *wasm.Module) error) (*Interpreter, error) {
+func NewInterpreter(module *wasm.Module, compiled []bif.Compiled, initMem func(m *bif.WasmMemory, module *wasm.Module) error) (*Interpreter, error) {
 	var inter Interpreter
 	var vm VM
 
-	inter.Memory = bif.NewWavmMemory()
+	inter.Memory = bif.NewWasmMemory()
 	inter.heapPointerIndex = -1
 	mut := false
 	inter.Mutable = &mut
@@ -221,12 +221,12 @@ func (vm *VM) ResetContext() {
 // things such as memory and control.
 type WavmProcess struct {
 	vm      *VM
-	memory  *bif.WavmMemory
+	memory  *bif.WasmMemory
 	mutable *bool
 }
 
 // NewProcess creates a VM interface object for host functions
-func NewWavmProcess(vm *VM, memory *bif.WavmMemory, mutable *bool) *WavmProcess {
+func NewWavmProcess(vm *VM, memory *bif.WasmMemory, mutable *bool) *WavmProcess {
 	return &WavmProcess{
 		vm,
 		memory,
