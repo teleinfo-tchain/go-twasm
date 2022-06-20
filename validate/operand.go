@@ -5,7 +5,7 @@
 package validate
 
 import (
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/wasm"
 )
 
 type operand struct {

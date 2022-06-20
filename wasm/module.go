@@ -9,7 +9,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/bif/bif-wasm/wasm/internal/readpos"
+	"github.com/tchain/twasm/wasm/internal/readpos"
 )
 
 var ErrInvalidMagic = errors.New("wasm: Invalid magic number")

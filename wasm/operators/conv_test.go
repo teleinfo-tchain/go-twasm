@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/wasm"
 )
 
 func TestNewConversionOp(t *testing.T) {

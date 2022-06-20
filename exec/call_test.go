@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/wasm"
 )
 
 func TestHostCall(t *testing.T) {

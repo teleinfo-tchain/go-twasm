@@ -17,9 +17,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/bif/bif-wasm/exec"
-	"github.com/bif/bif-wasm/validate"
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/exec"
+	"github.com/tchain/twasm/validate"
+	"github.com/tchain/twasm/wasm"
 )
 
 const (

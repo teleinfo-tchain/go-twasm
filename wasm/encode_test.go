@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/wasm"
 )
 
 func TestEncode(t *testing.T) {

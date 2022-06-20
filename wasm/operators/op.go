@@ -9,7 +9,7 @@ package operators
 import (
 	"fmt"
 
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/wasm"
 )
 
 var (

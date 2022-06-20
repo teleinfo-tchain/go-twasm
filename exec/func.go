@@ -9,7 +9,7 @@ import (
 	"math"
 	"reflect"
 
-	"github.com/bif/bif-wasm/bif"
+	"github.com/tchain/twasm/chain"
 )
 
 type function interface {
@@ -18,7 +18,7 @@ type function interface {
 
 type compiledFunction struct {
 	code           []byte
-	branchTables   []*bif.BranchTable // edited by bif
+	branchTables   []*chain.BranchTable // edited by chain
 	maxDepth       int                // maximum stack depth reached while executing the function body
 	totalLocalVars int                // number of local variables used by the function
 	args           int                // number of arguments the function accepts

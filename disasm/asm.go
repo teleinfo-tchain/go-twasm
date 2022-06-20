@@ -9,8 +9,8 @@ import (
 	"encoding/binary"
 	"math"
 
-	"github.com/bif/bif-wasm/wasm/leb128"
-	ops "github.com/bif/bif-wasm/wasm/operators"
+	"github.com/tchain/twasm/wasm/leb128"
+	ops "github.com/tchain/twasm/wasm/operators"
 )
 
 // Assemble encodes a set of instructions into binary representation.

@@ -11,8 +11,8 @@ import (
 	"io"
 	"sort"
 
-	"github.com/bif/bif-wasm/wasm/internal/readpos"
-	"github.com/bif/bif-wasm/wasm/leb128"
+	"github.com/tchain/twasm/wasm/internal/readpos"
+	"github.com/tchain/twasm/wasm/leb128"
 )
 
 // Section is a generic WASM section interface.

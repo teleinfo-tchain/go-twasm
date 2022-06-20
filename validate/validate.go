@@ -9,8 +9,8 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/bif/bif-wasm/wasm"
-	ops "github.com/bif/bif-wasm/wasm/operators"
+	"github.com/tchain/twasm/wasm"
+	ops "github.com/tchain/twasm/wasm/operators"
 )
 
 // vibhavp: TODO: We do not verify whether blocks don't access for the parent block, do that.

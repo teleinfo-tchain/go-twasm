@@ -42,9 +42,9 @@ import (
 	"bytes"
 	"encoding/binary"
 
-	"github.com/bif/bif-wasm/disasm"
-	ops "github.com/bif/bif-wasm/wasm/operators"
-	"github.com/bif/bif-wasm/bif"
+	"github.com/tchain/twasm/chain"
+	"github.com/tchain/twasm/disasm"
+	ops "github.com/tchain/twasm/wasm/operators"
 )
 
 // A small note on the usage of discard instructions:
@@ -106,16 +106,16 @@ type block struct {
 
 	patchOffsets []int64 // A list of offsets in the bytecode stream that need to be patched with the correct jump addresses
 
-	discard      disasm.StackInfo // Information about the stack created in this block, used while creating Discard instructions
-	branchTables []*bif.BranchTable   // All branch tables that were defined in this block.
+	discard      disasm.StackInfo   // Information about the stack created in this block, used while creating Discard instructions
+	branchTables []*chain.BranchTable // All branch tables that were defined in this block.
 }
 
 // Compile rewrites WebAssembly bytecode from its disassembly.
 // TODO(vibhavp): Add options for optimizing code. Operators like i32.reinterpret/f32
 // are no-ops, and can be safely removed.
-func Compile(disassembly []disasm.Instr) ([]byte, []*bif.BranchTable) {
+func Compile(disassembly []disasm.Instr) ([]byte, []*chain.BranchTable) {
 	buffer := new(bytes.Buffer)
-	branchTables := []*bif.BranchTable{}
+	branchTables := []*chain.BranchTable{}
 
 	curBlockDepth := -1
 	blocks := make(map[int]*block) // maps nesting depths (labels) to blocks
@@ -257,13 +257,13 @@ func Compile(disassembly []disasm.Instr) ([]byte, []*bif.BranchTable) {
 			binary.Write(buffer, binary.LittleEndian, stackTopDiff)
 			continue
 		case ops.BrTable:
-			branchTable := &bif.BranchTable{
+			branchTable := &chain.BranchTable{
 				// we subtract one for the implicit block created by
 				// the function body
 				BlocksLen: len(blocks) - 1,
 			}
 			targetCount := instr.Immediates[0].(uint32)
-			branchTable.Targets = make([]bif.Target, targetCount)
+			branchTable.Targets = make([]chain.Target, targetCount)
 			for i := range branchTable.Targets {
 				// The first immediates is the number of targets, so we ignore that
 				label := int64(instr.Immediates[i+1].(uint32))

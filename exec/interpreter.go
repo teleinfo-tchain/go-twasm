@@ -5,24 +5,24 @@ import (
 	"math"
 	"strings"
 
-	"github.com/bif/bif-wasm/disasm"
-	"github.com/bif/bif-wasm/exec/internal/compile"
-	"github.com/bif/bif-wasm/bif"
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/chain"
+	"github.com/tchain/twasm/disasm"
+	"github.com/tchain/twasm/exec/internal/compile"
+	"github.com/tchain/twasm/wasm"
 )
 
 type Interpreter struct {
 	*VM
-	Memory           *bif.WasmMemory
+	Memory           *chain.WasmMemory
 	heapPointerIndex int64
 	Mutable          *bool
 }
 
-func NewInterpreter(module *wasm.Module, compiled []bif.Compiled, initMem func(m *bif.WasmMemory, module *wasm.Module) error) (*Interpreter, error) {
+func NewInterpreter(module *wasm.Module, compiled []chain.Compiled, initMem func(m *chain.WasmMemory, module *wasm.Module) error) (*Interpreter, error) {
 	var inter Interpreter
 	var vm VM
 
-	inter.Memory = bif.NewWasmMemory()
+	inter.Memory = chain.NewWasmMemory()
 	inter.heapPointerIndex = -1
 	mut := false
 	inter.Mutable = &mut
@@ -221,12 +221,12 @@ func (vm *VM) ResetContext() {
 // things such as memory and control.
 type WavmProcess struct {
 	vm      *VM
-	memory  *bif.WasmMemory
+	memory  *chain.WasmMemory
 	mutable *bool
 }
 
 // NewProcess creates a VM interface object for host functions
-func NewWavmProcess(vm *VM, memory *bif.WasmMemory, mutable *bool) *WavmProcess {
+func NewWavmProcess(vm *VM, memory *chain.WasmMemory, mutable *bool) *WavmProcess {
 	return &WavmProcess{
 		vm,
 		memory,

@@ -12,11 +12,11 @@ import (
 	"io"
 	"math"
 
-	"github.com/bif/bif-wasm/disasm"
-	"github.com/bif/bif-wasm/exec/internal/compile"
-	"github.com/bif/bif-wasm/bif"
-	"github.com/bif/bif-wasm/wasm"
-	ops "github.com/bif/bif-wasm/wasm/operators"
+	"github.com/tchain/twasm/chain"
+	"github.com/tchain/twasm/disasm"
+	"github.com/tchain/twasm/exec/internal/compile"
+	"github.com/tchain/twasm/wasm"
+	ops "github.com/tchain/twasm/wasm/operators"
 )
 
 var (
@@ -368,8 +368,8 @@ outer:
 				panic(fmt.Sprintf("exec: function at index %d is not a compiled function", vm.ctx.curFunc))
 			}
 			table := cf.branchTables[index]
-			// edited by bif
-			var target bif.Target
+			// edited by chain
+			var target chain.Target
 			if label >= 0 && label < int32(len(table.Targets)) {
 				target = table.Targets[int32(label)]
 			} else {

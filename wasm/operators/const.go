@@ -5,7 +5,7 @@
 package operators
 
 import (
-	"github.com/bif/bif-wasm/wasm"
+	"github.com/tchain/twasm/wasm"
 )
 
 var (

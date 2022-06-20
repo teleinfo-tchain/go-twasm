@@ -8,14 +8,14 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/bif/bif-wasm/bif"
+	"github.com/tchain/twasm/chain"
 )
 
 type contractFunction struct {
 	val     reflect.Value
 	typ     reflect.Type
 	sig     int
-	memory  *bif.WasmMemory
+	memory  *chain.WasmMemory
 	mutable *bool
 }
 
