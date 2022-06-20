@@ -1,3 +1,3 @@
-module github.com/tchain/twasm/v2
+module github.com/tchain/twasm
 
 go 1.18
