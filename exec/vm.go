@@ -12,11 +12,11 @@ import (
 	"io"
 	"math"
 
-	"github.com/tchain/twasm/chain"
-	"github.com/tchain/twasm/disasm"
-	"github.com/tchain/twasm/exec/internal/compile"
-	"github.com/tchain/twasm/wasm"
-	ops "github.com/tchain/twasm/wasm/operators"
+	"github.com/tchain/go-twasm/chain"
+	"github.com/tchain/go-twasm/disasm"
+	"github.com/tchain/go-twasm/exec/internal/compile"
+	"github.com/tchain/go-twasm/wasm"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 var (

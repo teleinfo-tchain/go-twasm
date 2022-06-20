@@ -8,8 +8,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/tchain/twasm/wasm"
-	ops "github.com/tchain/twasm/wasm/operators"
+	"github.com/tchain/go-twasm/wasm"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 type Error struct {

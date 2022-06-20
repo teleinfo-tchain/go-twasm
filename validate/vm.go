@@ -9,9 +9,9 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/tchain/twasm/wasm"
-	"github.com/tchain/twasm/wasm/leb128"
-	ops "github.com/tchain/twasm/wasm/operators"
+	"github.com/tchain/go-twasm/wasm"
+	"github.com/tchain/go-twasm/wasm/leb128"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 // mockVM is a minimal implementation of a virtual machine to

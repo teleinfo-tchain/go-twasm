@@ -11,8 +11,8 @@ import (
 	"log"
 	"reflect"
 
-	"github.com/tchain/twasm/exec"
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/exec"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 func ExampleVM_add() {
@@ -118,7 +118,7 @@ func ExampleVM_add() {
 // compileWast2Wasm fakes a compilation pass from WAST to WASM.
 //
 // When wagon gets a WAST parser, this function will be running an actual compilation.
-// See: https://github.com/tchain/twasm/issues/34
+// See: https://github.com/tchain/go-twasm/issues/34
 func compileWast2Wasm(fname string) ([]byte, error) {
 	switch fname {
 	case "testdata/add-ex.wast":

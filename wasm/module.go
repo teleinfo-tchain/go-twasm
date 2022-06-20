@@ -9,7 +9,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/tchain/twasm/wasm/internal/readpos"
+	"github.com/tchain/go-twasm/wasm/internal/readpos"
 )
 
 var ErrInvalidMagic = errors.New("wasm: Invalid magic number")

@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 func TestEncode(t *testing.T) {

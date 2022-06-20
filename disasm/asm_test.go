@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/tchain/twasm/disasm"
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/disasm"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 var testPaths = []string{

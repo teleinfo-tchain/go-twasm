@@ -11,7 +11,7 @@ import (
 	"io"
 	"math"
 
-	"github.com/tchain/twasm/wasm/leb128"
+	"github.com/tchain/go-twasm/wasm/leb128"
 )
 
 const (

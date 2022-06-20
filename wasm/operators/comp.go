@@ -5,7 +5,7 @@
 package operators
 
 import (
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 var (

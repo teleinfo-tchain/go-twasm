@@ -7,7 +7,7 @@ package operators
 import (
 	"regexp"
 
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 var reCvrtOp = regexp.MustCompile(`(.+)\.(?:[a-z]|\_)+\/(.+)`)

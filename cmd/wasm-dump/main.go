@@ -14,9 +14,9 @@ import (
 	"os"
 	"sort"
 
-	"github.com/tchain/twasm/disasm"
-	"github.com/tchain/twasm/wasm"
-	"github.com/tchain/twasm/wasm/leb128"
+	"github.com/tchain/go-twasm/disasm"
+	"github.com/tchain/go-twasm/wasm"
+	"github.com/tchain/go-twasm/wasm/leb128"
 )
 
 // TODO: track the number of imported funcs,memories,tables and globals to adjust

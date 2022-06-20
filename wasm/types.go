@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/tchain/twasm/wasm/leb128"
+	"github.com/tchain/go-twasm/wasm/leb128"
 )
 
 type Marshaler interface {

@@ -5,7 +5,7 @@
 package exec
 
 import (
-	ops "github.com/tchain/twasm/wasm/operators"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 func (vm *VM) newFuncTable() {

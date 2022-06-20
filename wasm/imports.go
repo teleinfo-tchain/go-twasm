@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/tchain/twasm/wasm/leb128"
+	"github.com/tchain/go-twasm/wasm/leb128"
 )
 
 // Import is an interface implemented by types that can be imported by a WebAssembly module.

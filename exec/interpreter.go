@@ -5,10 +5,10 @@ import (
 	"math"
 	"strings"
 
-	"github.com/tchain/twasm/chain"
-	"github.com/tchain/twasm/disasm"
-	"github.com/tchain/twasm/exec/internal/compile"
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/chain"
+	"github.com/tchain/go-twasm/disasm"
+	"github.com/tchain/go-twasm/exec/internal/compile"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 type Interpreter struct {

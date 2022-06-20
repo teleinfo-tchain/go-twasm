@@ -42,9 +42,9 @@ import (
 	"bytes"
 	"encoding/binary"
 
-	"github.com/tchain/twasm/chain"
-	"github.com/tchain/twasm/disasm"
-	ops "github.com/tchain/twasm/wasm/operators"
+	"github.com/tchain/go-twasm/chain"
+	"github.com/tchain/go-twasm/disasm"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 // A small note on the usage of discard instructions:

@@ -9,7 +9,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/tchain/twasm/wasm/internal/readpos"
+	"github.com/tchain/go-twasm/wasm/internal/readpos"
 )
 
 func TestRead(t *testing.T) {

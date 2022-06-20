@@ -12,10 +12,10 @@ import (
 	"io"
 	"math"
 
-	"github.com/tchain/twasm/internal/stack"
-	"github.com/tchain/twasm/wasm"
-	"github.com/tchain/twasm/wasm/leb128"
-	ops "github.com/tchain/twasm/wasm/operators"
+	"github.com/tchain/go-twasm/internal/stack"
+	"github.com/tchain/go-twasm/wasm"
+	"github.com/tchain/go-twasm/wasm/leb128"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 // Instr describes an instruction, consisting of an operator, with its

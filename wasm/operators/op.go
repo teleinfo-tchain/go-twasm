@@ -9,7 +9,7 @@ package operators
 import (
 	"fmt"
 
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 var (

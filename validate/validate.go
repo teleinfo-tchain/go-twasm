@@ -9,8 +9,8 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/tchain/twasm/wasm"
-	ops "github.com/tchain/twasm/wasm/operators"
+	"github.com/tchain/go-twasm/wasm"
+	ops "github.com/tchain/go-twasm/wasm/operators"
 )
 
 // vibhavp: TODO: We do not verify whether blocks don't access for the parent block, do that.

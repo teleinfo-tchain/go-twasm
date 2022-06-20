@@ -17,9 +17,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/tchain/twasm/exec"
-	"github.com/tchain/twasm/validate"
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/exec"
+	"github.com/tchain/go-twasm/validate"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 const (

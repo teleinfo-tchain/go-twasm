@@ -9,7 +9,7 @@ import (
 	"math"
 	"reflect"
 
-	"github.com/tchain/twasm/chain"
+	"github.com/tchain/go-twasm/chain"
 )
 
 type function interface {

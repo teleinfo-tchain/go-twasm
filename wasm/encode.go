@@ -9,7 +9,7 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/tchain/twasm/wasm/leb128"
+	"github.com/tchain/go-twasm/wasm/leb128"
 )
 
 const currentVersion = 0x01

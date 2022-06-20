@@ -5,7 +5,7 @@
 package validate
 
 import (
-	"github.com/tchain/twasm/wasm"
+	"github.com/tchain/go-twasm/wasm"
 )
 
 type operand struct {
